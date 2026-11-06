@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ink font-body; }
+}
+
+@layer components {
+  .glow-text {
+    background: linear-gradient(90deg, #9b5cf6, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-ring {
+    background: radial-gradient(circle, rgba(155,92,246,0.35) 0%, rgba(56,189,248,0.08) 45%, transparent 70%);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(#241f3b 1px, transparent 1px),
+      linear-gradient(90deg, #241f3b 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+  .page-container {
+  @apply w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.modal-in { animation: modalIn 0.18s ease-out; }
+}
